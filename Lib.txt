@@ -1,0 +1,6 @@
+uvicorn
+sqlalchemy
+hash
+pydantic
+fastapi
+passlib
