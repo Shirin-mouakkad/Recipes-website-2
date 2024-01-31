@@ -19,14 +19,14 @@ def Create_Recipes(db: Session, request: Recipe_Base):
     db.refresh(New_Recipe)
     return New_Recipe
 
-def Get_all_Recipe(db:Session):
+def Get_All_Recipe(db:Session):
     return db.query(Recipes).all()
 
 def get_Recipe(db:Session,Id:int):
     return db.query(Recipes).filter(Recipes.id==Id)
 
 
-def Update_User(
+def Update_Recipe(
         db:Session,
         Recipe_ID:int,
         request:Recipe_Base
@@ -48,7 +48,7 @@ def Update_User(
 
 #delete recipe
     
-def delete_User(db:Session,Id:int):
+def Delete_Recipe(db:Session,Id:int):
     query1=db.query(Recipes).filter(Recipes.id==Id)
     query2=db.query(Recipe_ingredients).filter(Recipe_ingredients.Recipe_Id==Id).all()
     query3=db.query(RecipeReview).filter(RecipeReview.Recipe_Id==Id).all()
