@@ -100,3 +100,16 @@ class User_Display(BaseModel):
     Email: str
     class Config():
         orm_mode=True
+
+#Recipe display 
+
+class Recipe_Display(BaseModel):
+    Name: str
+    Desc: str
+    Category: str
+    Vegan: bool
+    Duration: str
+    Rating: int
+    rating_no: int
+    class Config():
+        orm_mode=True
