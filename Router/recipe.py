@@ -21,7 +21,7 @@ def get_Recipe(Id: int, db: Session =Depends(Get_DB)):
 
 #Read All Recipes
  
- @router.get('/', response_model=List[Recipe_Display])
+@router.get('/', response_model=List[Recipe_Display])
 def Get_all_Recipe(db: Session = Depends(Get_DB)):
     return DB_Recipes.Get_all_Recipe(db)
 
@@ -36,3 +36,6 @@ def Update_Recipe(Id: int, request: Recipe_Base, db: Session = Depends(Get_DB)):
 @router.get('/{id}/delete')
 def delete_Recipe(Id: int, request: Recipe_Base, db: Session = Depends(Get_DB)):
     return DB_Recipes.delete_Recipe(db, Id)
+
+import sys
+print(sys.path)
